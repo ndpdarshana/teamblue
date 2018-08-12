@@ -1,6 +1,6 @@
 # teamblue
 
-###System Requirements
+### System Requirements
 
 - java version 8+
 - MySQL 5.6+
