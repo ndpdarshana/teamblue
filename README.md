@@ -29,7 +29,7 @@
 
 `./gradlew bootRun`
 
-5 Server up and running
+5. Server up and running
 
 `GET http://localhost:8080/health`
 
