@@ -1,4 +1,4 @@
-package uow.itpm.teamblue.rest;
+package uow.itpm.teamblue.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

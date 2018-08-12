@@ -1,4 +1,4 @@
-package uow.itpm.teamblue.rest;
+package uow.itpm.teamblue.controllers;
 
 import org.springframework.web.bind.annotation.*;
 import uow.itpm.teamblue.model.HealthCheck;
