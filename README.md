@@ -33,6 +33,6 @@
 
 `GET http://localhost:8080/health`
 
-###References
+### References
 - https://www.callicoder.com/spring-boot-file-upload-download-rest-api-example/
 - https://spring.io/guides
