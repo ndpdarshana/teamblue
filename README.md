@@ -13,7 +13,7 @@ A cross-language plagiarism detection tool
 ### Tools
 
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/)
-    - You can obtain free license for IntelliJ Student using uow email 
+    - You can obtain free student license for IntelliJ using uow email 
     - Let's use same IDE in order to maintain style consistence on code.
 - [phpMyadmin](https://www.phpmyadmin.net/) or [MySQL workbench](https://www.mysql.com/products/workbench/)
 
