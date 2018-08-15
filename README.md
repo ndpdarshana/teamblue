@@ -16,6 +16,7 @@ A cross-language plagiarism detection tool
     - You can obtain free student license for IntelliJ using uow email 
     - Let's use same IDE in order to maintain style consistence on code.
 - [phpMyadmin](https://www.phpmyadmin.net/) or [MySQL workbench](https://www.mysql.com/products/workbench/)
+- [Postman](https://www.getpostman.com/apps)
 
 ### Technologies
 
@@ -94,3 +95,4 @@ To create pull requests, review and merge, use github web.
 ### References
 - https://www.callicoder.com/spring-boot-file-upload-download-rest-api-example/
 - https://spring.io/guides
+- http://www.asjava.com/core-java/java-md5-example/
