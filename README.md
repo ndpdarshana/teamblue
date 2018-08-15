@@ -17,6 +17,7 @@ A cross-language plagiarism detection tool
     - Let's use same IDE in order to maintain style consistence on code.
 - [phpMyadmin](https://www.phpmyadmin.net/) or [MySQL workbench](https://www.mysql.com/products/workbench/)
 - [Postman](https://www.getpostman.com/apps)
+- [Meld](http://meldmerge.org/)
 
 ### Technologies
 
