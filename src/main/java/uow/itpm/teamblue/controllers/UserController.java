@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import uow.itpm.teamblue.model.User;
 import uow.itpm.teamblue.model.repo.UserRepository;
-import uow.itpm.teamblue.service.UserService;
+import uow.itpm.teamblue.services.UserService;
 
 @Controller
 @RequestMapping("/user")

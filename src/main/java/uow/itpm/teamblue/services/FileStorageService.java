@@ -1,4 +1,4 @@
-package uow.itpm.teamblue.service;
+package uow.itpm.teamblue.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -6,8 +6,8 @@ import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
-import uow.itpm.teamblue.exception.FileNotFoundException;
-import uow.itpm.teamblue.exception.FileStorageException;
+import uow.itpm.teamblue.exceptions.FileNotFoundException;
+import uow.itpm.teamblue.exceptions.FileStorageException;
 import uow.itpm.teamblue.model.FileStorageProperties;
 
 import java.io.IOException;

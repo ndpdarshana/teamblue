@@ -1,4 +1,4 @@
-package uow.itpm.teamblue.exception;
+package uow.itpm.teamblue.exceptions;
 
 public class FileNotFoundException extends RuntimeException {
     public FileNotFoundException(String message){

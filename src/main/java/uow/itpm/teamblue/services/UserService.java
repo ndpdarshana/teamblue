@@ -1,4 +1,4 @@
-package uow.itpm.teamblue.service;
+package uow.itpm.teamblue.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
