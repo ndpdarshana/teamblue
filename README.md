@@ -97,3 +97,5 @@ To create pull requests, review and merge, use github web.
 - https://www.callicoder.com/spring-boot-file-upload-download-rest-api-example/
 - https://spring.io/guides
 - http://www.asjava.com/core-java/java-md5-example/
+- https://www.youtube.com/watch?v=-HYrUs1ZCLI
+- https://tech.yandex.com/translate/
