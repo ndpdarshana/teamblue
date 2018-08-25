@@ -1,5 +1,6 @@
 package uow.itpm.teamblue.module.security;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
@@ -21,13 +22,13 @@ public class JwtAuthenticationTokenFilter extends AbstractAuthenticationProcessi
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException, IOException, ServletException {
 
-        String token = request.getHeader("Authorisation");
+        String token = request.getHeader("Authorization");
         if(token == null || !token.startsWith("Token ")){
             throw new RuntimeException("Authorisation token is missing");
         }
 
         token = token.substring(6);
-        JwtAuthenticationToken jwtAuthenticationToken = new JwtAuthenticationToken(token);
+        JwtAuthenticationToken jwtAuthenticationToken = new JwtAuthenticationToken(HttpStatus.ACCEPTED,token);
         return getAuthenticationManager().authenticate(jwtAuthenticationToken);
     }
 

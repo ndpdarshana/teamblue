@@ -1,15 +1,12 @@
 package uow.itpm.teamblue.model;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 
-public class JwtAuthenticationToken extends UsernamePasswordAuthenticationToken {
-
+public class AuthenticationTokenResponse {
     private HttpStatus status;
     private String token;
 
-    public JwtAuthenticationToken(HttpStatus status, String token) {
-        super(null, null);
+    public AuthenticationTokenResponse(HttpStatus status, String token){
         this.status = status;
         this.token = token;
     }
@@ -23,20 +20,11 @@ public class JwtAuthenticationToken extends UsernamePasswordAuthenticationToken 
     }
 
     public HttpStatus getStatus() {
+
         return status;
     }
 
     public void setStatus(HttpStatus status) {
         this.status = status;
-    }
-
-    @Override
-    public Object getCredentials() {
-        return null;
-    }
-
-    @Override
-    public Object getPrincipal() {
-        return null;
     }
 }
