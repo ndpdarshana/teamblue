@@ -50,9 +50,9 @@ public class User {
         this.email = email;
     }
 
-    public boolean isAuthenticated(String password){
-        String hashedPw = getHashed(password);
-        if(this.password.equals(password)){
+    public boolean isAuthenticated(User user){
+        String hashedPw = getHashed(user.password);
+        if(this.password.equals(user.password)){
             return true;
         }
         return false;

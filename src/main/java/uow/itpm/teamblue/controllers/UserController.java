@@ -8,7 +8,7 @@ import uow.itpm.teamblue.model.repo.UserRepository;
 import uow.itpm.teamblue.services.UserService;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/rest/user")
 public class UserController {
     @Autowired
     private UserRepository userRepository;

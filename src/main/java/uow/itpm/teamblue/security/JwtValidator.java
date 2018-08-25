@@ -8,14 +8,12 @@ import uow.itpm.teamblue.model.User;
 @Component
 public class JwtValidator {
 
-    private String secret = "secretkeyfroteamblue";
-
     public User validate(String token) {
 
         User user = null;
         try {
             Claims body = Jwts.parser()
-                    .setSigningKey(secret)
+                    .setSigningKey(SecurityConstants.secret)
                     .parseClaimsJws(token)
                     .getBody();
 

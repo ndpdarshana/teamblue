@@ -17,7 +17,7 @@ public class JwtTokenGenerator {
         return Jwts.builder()
 //                .setExpiration(new Date(100))
                 .setClaims(claims)
-                .signWith(SignatureAlgorithm.HS512, "secretkeyfroteamblue")
+                .signWith(SignatureAlgorithm.HS512, SecurityConstants.secret)
                 .compact();
 
     }
