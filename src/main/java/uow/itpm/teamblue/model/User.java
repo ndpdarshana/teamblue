@@ -20,7 +20,9 @@ public class User {
     private String password;
     private String firstName;
     private String lastName;
+    private String role;
     private static String algorithm = "MD5";
+    private boolean enabled = true;
     @Transient
     private String message;
 
@@ -48,9 +50,9 @@ public class User {
         this.email = email;
     }
 
-    public boolean isAuthenticated(String password){
-        String hashedPw = getHashed(password);
-        if(this.password.equals(password)){
+    public boolean isAuthenticated(User user){
+        String hashedPw = getHashed(user.password);
+        if(this.password.equals(user.password)){
             return true;
         }
         return false;
@@ -82,6 +84,22 @@ public class User {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
     private String getHashed(String text){

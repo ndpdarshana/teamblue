@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import uow.itpm.teamblue.model.HealthCheck;
 
 @RestController
+@RequestMapping("/rest")
 public class Health {
     protected final Log logger = LogFactory.getLog(getClass());
 
