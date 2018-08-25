@@ -1,4 +1,4 @@
-package uow.itpm.teamblue.security;
+package uow.itpm.teamblue.module.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

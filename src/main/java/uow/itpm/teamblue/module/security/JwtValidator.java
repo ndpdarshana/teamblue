@@ -1,4 +1,4 @@
-package uow.itpm.teamblue.security;
+package uow.itpm.teamblue.module.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

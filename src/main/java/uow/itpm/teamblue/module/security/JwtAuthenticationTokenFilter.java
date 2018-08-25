@@ -1,9 +1,8 @@
-package uow.itpm.teamblue.security;
+package uow.itpm.teamblue.module.security;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
-import org.springframework.stereotype.Component;
 import uow.itpm.teamblue.model.JwtAuthenticationToken;
 
 import javax.servlet.FilterChain;
