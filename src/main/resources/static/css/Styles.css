@@ -1,0 +1,87 @@
+@font-face
+{
+	font-family: angelFace;
+	src:url("Angelface.otf");
+}
+#pageHeader
+{
+	background-color: #025196;
+	height : 60px;
+}
+#banner
+{
+	background-color: #025196;
+	height : 40px;
+	color: #ffffff;
+	text-align: right !important;
+	bottom:0;
+	position: fixed;
+	font-family: angelFace;
+	font-size:30px;
+}
+.customLink
+{
+	color:#025196 !important;
+	font-family:"Bookman Old Style"	!important;
+}
+.pageTitle
+{
+	font-family: angelFace;
+	color: #ffffff;
+	font-size:40px;
+	margin-top: 5px;
+	margin-left: -25px;
+}
+.logo
+{
+	height:50px;
+	width:95px;
+	margin-top: 5px;
+}
+.navLink
+{
+	font-family:"Bookman Old Style"	;
+	color: #ffffff !important;
+	font-size:20px;
+	margin-top: 20px;
+}
+.linkIcon
+{
+	color: #ffffff !important;
+	font-size:35px;
+}
+.linkButton
+{
+	margin-top: 10px;
+	text-align: right;
+}
+.fontStyle
+{
+	color: #ffffff !important;
+}
+
+.navigation
+{
+	border-left: 1px #ffffff solid;
+}
+
+.dropdown-menu
+{
+	padding: 5px 5px 5px 5px !important;
+	left:-5px !important;
+	top:-1px !important;
+	color: #025196 !important;
+	font-size: 20px !important;
+}
+
+a:hover
+{
+	text-decoration: none !important;
+	color:#b1b0b2 !important;
+}
+
+.rightBar
+{
+	border-right: 1px #ffffff solid;
+	max-width: 12% !important;
+}
