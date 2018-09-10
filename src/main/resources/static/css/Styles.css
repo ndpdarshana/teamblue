@@ -1,0 +1,187 @@
+@font-face
+{
+	font-family: angelFace;
+	src:url("Angelface.otf");
+}
+@font-face {
+	font-family: 'Glyphicons Halflings';
+	src: url('../fonts/glyphicons-halflings-regular.eot');
+	src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+.glyphicon {
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	font-family: 'Glyphicons Halflings';
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.glyphicon-upload:before {
+	content: "\e027";
+}
+.glyphicon-upload
+{
+	color:#FDB338;
+	font-size: 25px !important;
+	padding-left: 5px ;
+}
+#uploadLink:hover .glyphicon-upload, #uploadLink:hover
+{
+	color:#02457f !important;
+
+}
+
+.glyphicon-check:before {
+	content: "\e067";
+}
+.glyphicon-check
+{
+	color: #ffffff !important;
+}
+#pageHeader
+{
+	background-color: #025196;
+	height : 60px;
+}
+#banner
+{
+	background-color: #025196;
+	height : 40px;
+	color: #ffffff;
+	text-align: right !important;
+	bottom:0;
+	position: fixed;
+	font-family: angelFace;
+	font-size:30px;
+}
+.customLink
+{
+	color:#025196 !important;
+	font-family:"Poppins-Regular"	!important;
+}
+.pageTitle
+{
+	font-family: angelFace;
+	color: #ffffff;
+	font-size:40px;
+	margin-top: 5px;
+	margin-left: -25px;
+}
+.logo
+{
+	height:56px;
+	width:190px;
+	margin-top: 5px;
+}
+.navLink
+{
+	font-family:"Poppins-Regular";
+	color: #ffffff !important;
+	font-size:20px;
+	margin-top: 20px;
+}
+.linkIcon
+{
+	color: #ffffff !important;
+	font-size:35px;
+}
+.linkButton
+{
+	margin-top: 10px;
+	text-align: right;
+	float: left;
+}
+.fontStyle
+{
+	color: #ffffff !important;
+}
+.dropdown-menu
+{
+    padding: 5px 5px 5px 5px !important;
+}
+
+#pageHeader .dropdown-menu
+{
+
+	left:-35px !important;
+	top:-1px !important;
+	color: #025196 !important;
+	font-size: 20px !important;
+}
+
+.divNavLink:hover
+{
+
+	background-color:#02457f !important; ;
+
+}
+a:hover
+{
+	text-decoration: none !important;
+}
+
+.rightBar
+{
+	border-right: 1px #ffffff solid;
+	max-width: 12% !important;
+}
+.linkBottom
+{
+	border-bottom: #c8cbcf 1px solid;
+}
+.mainBody
+{
+    max-width: 700px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-top: 60px !important;
+}
+#mainPage h2
+{
+    color: #FDB338;
+	font-family:"Poppins-Regular";
+}
+.ccButton
+{
+    background-color:#FDB338 ;
+    color: #ffffff !important;
+}
+#txtContent
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.dropdown-menu li:hover
+{
+    background-color: #e3e7ed;
+}
+#uploadLink
+{
+	float: right;
+	color:#FDB338;
+}
+#avatar
+{
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	float: right;
+	margin-top: 5px;
+}
+#targetLanguage
+{
+	width: 100%;
+	text-align: left;
+}
+#targetLanguage.dropdown-toggle::after
+{
+	float: right;
+	margin-top: 10px;
+}
+.error
+{
+	color: red !important;
+}
