@@ -3,6 +3,20 @@
 	font-family: angelFace;
 	src:url("Angelface.otf");
 }
+
+
+@font-face
+{
+	font-family: poppins-regular;
+	src:url("../fonts/Poppins/Poppins-Regular.otf");
+}
+
+@font-face
+{
+	font-family: poppins-bold;
+	src:url("../fonts/Poppins/Poppins-Bold.otf");
+}
+
 #pageHeader
 {
 	background-color: #025196;
@@ -108,7 +122,7 @@ a:hover
 	-moz-osx-font-smoothing: grayscale;
 }
 .glyphicon-upload:before {
-	content: "\e027";
+	content: "\e022";
 }
 .glyphicon-upload
 {
@@ -116,7 +130,29 @@ a:hover
 	font-size: 25px !important;
 	padding-left: 5px ;
 }
+
+
 #uploadLink:hover .glyphicon-upload, #uploadLink:hover
+{
+	color:#02457f !important;
+
+}
+
+.glyphicon-plus:before {
+	content: "\2b";
+}
+
+.glyphicon-plus
+{
+	color:#FDB338;
+	font-size: 20px !important;
+	padding-left: 5px;
+}
+#plusLink{
+	color:#FDB338;
+}
+
+#plusLink:hover .glyphicon-plus, #plusLink:hover
 {
 	color:#02457f !important;
 
@@ -272,4 +308,35 @@ a:hover
 .error
 {
 	color: red !important;
+}
+
+
+.titlePage
+{
+	color: #000 ;
+	font-family:poppins-regular;
+}
+
+.container
+{
+	margin: 25px;
+	display: flex;
+	justify-content: flex-end;
+	color: #000 ;
+	font-family:poppins-regular !important;
+}
+
+#body
+{
+	margin: 70px;
+}
+
+.element
+{
+	padding-right: 20px;
+	font-family:poppins-regular;
+	font-size: 15px;
+	line-height: 1.5;
+	color: #000;
+
 }
