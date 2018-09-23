@@ -8,6 +8,10 @@
 	src: url('../fonts/glyphicons-halflings-regular.eot');
 	src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
+@font-face {
+	font-family: Poppins-Regular;
+	src: url('../fonts/poppins/Poppins-Regular.ttf');
+}
 .glyphicon {
 	position: relative;
 	top: 1px;
@@ -22,25 +26,35 @@
 .glyphicon-upload:before {
 	content: "\e027";
 }
-.glyphicon-upload
+.glyphicon-upload, .glyphicon-refresh
 {
 	color:#FDB338;
 	font-size: 25px !important;
 	padding-left: 5px ;
 }
-#uploadLink:hover .glyphicon-upload, #uploadLink:hover
+.glyphicon-cog:before {
+    content: "\e019";
+
+}
+.glyphicon-cog
+{
+    color: #FFFFFF;
+}
+#uploadLink:hover .glyphicon-upload, #uploadLink:hover, #refreshTxt:hover .glyphicon-refresh
 {
 	color:#02457f !important;
 
 }
 
-.glyphicon-check:before {
+
+.glyphicon-check:before  {
 	content: "\e067";
 }
-.glyphicon-check
-{
-	color: #ffffff !important;
+.glyphicon-refresh:before {
+    content: "\e031";
 }
+
+
 #pageHeader
 {
 	background-color: #025196;
@@ -50,11 +64,11 @@
 {
 	background-color: #025196;
 	height : 40px;
-	color: #ffffff;
+	color: #ffffff !important;
 	text-align: right !important;
 	bottom:0;
 	position: fixed;
-	font-family: angelFace;
+	font-family: angelFace !important;
 	font-size:30px;
 }
 .customLink
@@ -80,7 +94,7 @@
 {
 	font-family:"Poppins-Regular";
 	color: #ffffff !important;
-	font-size:20px;
+	font-size:16px;
 	margin-top: 20px;
 }
 .linkIcon
@@ -109,7 +123,7 @@
 	left:-35px !important;
 	top:-1px !important;
 	color: #025196 !important;
-	font-size: 20px !important;
+	font-size: 16px !important;
 }
 
 .divNavLink:hover
@@ -158,10 +172,11 @@ a:hover
 {
     background-color: #e3e7ed;
 }
-#uploadLink
+#uploadLink, #refreshTxt
 {
 	float: right;
 	color:#FDB338;
+    margin-right: 10px;
 }
 #avatar
 {
@@ -184,4 +199,9 @@ a:hover
 .error
 {
 	color: red !important;
+}
+#errorMsg
+{
+    display: none;
+    margin-top: 10px;
 }
