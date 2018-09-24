@@ -78,7 +78,7 @@
             headers: headers,
             data: JSON.stringify(userData),
             success: function (data) {
-                window.location.href="Home.html";
+                window.location.href="html/Home.html";
             },
             error: function (error) {
                 console.log(JSON.stringify(error));
