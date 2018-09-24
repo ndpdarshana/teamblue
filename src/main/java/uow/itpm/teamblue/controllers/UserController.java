@@ -8,14 +8,14 @@ import uow.itpm.teamblue.model.repo.UserRepository;
 import uow.itpm.teamblue.services.UserService;
 
 @Controller
-@RequestMapping("/rest/user")
+@RequestMapping("/user")
 public class UserController {
     @Autowired
     private UserRepository userRepository;
     @Autowired
     private UserService userService;
 
-    @PostMapping("/add")
+    @PostMapping("/signup")
     public @ResponseBody String addNewUser(@RequestBody User user){
         if(user.getEmail() == null || user.getEmail().equals("") || user.getUsername() == null
                 || user.getUsername().equals("")){
@@ -31,11 +31,5 @@ public class UserController {
     @GetMapping("/all")
     public @ResponseBody Iterable<User> getAllUsers(){
         return userRepository.findAll();
-    }
-
-    @PostMapping("/signin")
-    public @ResponseBody String signIn(@RequestBody User user){
-
-        return userRepository.findByEmail(user.getEmail()).toString();
     }
 }

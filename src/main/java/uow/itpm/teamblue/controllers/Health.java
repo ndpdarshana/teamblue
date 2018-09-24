@@ -43,13 +43,13 @@ public class Health {
     }
 
     @GetMapping("/copy")
-    public void testCopy(){
+    public PlagiarismCheck testCopy(){
 //        plagiarismCheckerService.loginToApi();
         PlagiarismCheck plagiarismCheck = new PlagiarismCheck();
         plagiarismCheck.setText("The man Peter Dutton hand-picked as the first Australian Border Force (ABF) " +
                 "commissioner has divulged new details of the lengths the Minister's office went to in securing " +
                 "a tourist visa for an Italian nanny.");
         plagiarismCheck = plagiarismCheckerService.checkText(plagiarismCheck);
-        plagiarismCheckerService.result(plagiarismCheck);
+        return plagiarismCheckerService.result(plagiarismCheck);
     }
 }
