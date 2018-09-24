@@ -30,7 +30,7 @@ public class YandexTranslator implements TranslatorApi {
         String url = translatorProperties.getUrl() + "/translate?lang=" + translate.getFromLanguage()
                 + "-" + translate.getToLanguage() + "&key="
                 + translatorProperties.getApikey();
-//        String url = "https://translate.yandex.net/api/v1.5/tr.json/translate?lang=en-si&key=trnsl.1.1.20180825T111028Z.90b38aa17941b979.5d7446dd6e68768bd64e2107bb1dbda242031900";
+
         return getResponse(url, translate);
     }
 
