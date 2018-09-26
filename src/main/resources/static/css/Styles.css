@@ -3,6 +3,20 @@
 	font-family: angelFace;
 	src:url("Angelface.otf");
 }
+
+
+@font-face
+{
+	font-family: poppins-regular;
+	src:url("../fonts/Poppins/Poppins-Regular.otf");
+}
+
+@font-face
+{
+	font-family: poppins-bold;
+	src:url("../fonts/Poppins/Poppins-Bold.otf");
+}
+
 #pageHeader
 {
 	background-color: #025196;
@@ -84,4 +98,263 @@ a:hover
 {
 	border-right: 1px #ffffff solid;
 	max-width: 12% !important;
+}
+
+@font-face
+{
+	font-family: angelFace;
+	src:url("Angelface.otf");
+}
+@font-face {
+	font-family: 'Glyphicons Halflings';
+	src: url('../fonts/glyphicons-halflings-regular.eot');
+	src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+@font-face {
+	font-family: Poppins-Regular;
+	src: url('../fonts/poppins/Poppins-Regular.ttf');
+}
+.glyphicon {
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	font-family: 'Glyphicons Halflings';
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.glyphicon-upload:before {
+	content: "\e022";
+}
+.glyphicon-upload, .glyphicon-refresh
+{
+	color:#FDB338;
+	font-size: 25px !important;
+	padding-left: 5px ;
+}
+.glyphicon-cog:before {
+    content: "\e019";
+
+}
+.glyphicon-cog
+{
+    color: #FFFFFF;
+}
+#uploadLink:hover .glyphicon-upload, #uploadLink:hover, #refreshTxt:hover .glyphicon-refresh
+{
+	color:#02457f !important;
+
+}
+
+.glyphicon-plus:before {
+	content: "\2b";
+}
+
+.glyphicon-plus
+{
+	color:#FDB338;
+	font-size: 20px !important;
+	padding-left: 5px;
+}
+#plusLink{
+	color:#FDB338;
+}
+
+#plusLink:hover .glyphicon-plus, #plusLink:hover
+{
+	color:#02457f !important;
+
+}
+
+.glyphicon-check:before {
+	content: "\e067";
+}
+.glyphicon-refresh:before {
+    content: "\e031";
+}
+
+
+#pageHeader
+{
+	background-color: #025196;
+	height : 60px;
+}
+#banner
+{
+	background-color: #025196;
+	height : 40px;
+	color: #ffffff !important;
+	text-align: right !important;
+	bottom:0;
+	position: fixed;
+	font-family: angelFace !important;
+	font-size:30px;
+}
+.customLink
+{
+	color:#025196 !important;
+	font-family:"Poppins-Regular"	!important;
+}
+.pageTitle
+{
+	font-family: angelFace;
+	color: #ffffff;
+	font-size:40px;
+	margin-top: 5px;
+	margin-left: -25px;
+}
+.logo
+{
+	height:56px;
+	width:190px;
+	margin-top: 5px;
+}
+.navLink
+{
+	font-family:"Poppins-Regular";
+	color: #ffffff !important;
+	font-size:16px;
+	margin-top: 20px;
+}
+.linkIcon
+{
+	color: #ffffff !important;
+	font-size:35px;
+}
+.linkButton
+{
+	margin-top: 10px;
+	text-align: right;
+	float: left;
+}
+.fontStyle
+{
+	color: #ffffff !important;
+}
+.dropdown-menu
+{
+    padding: 5px 5px 5px 5px !important;
+}
+
+#pageHeader .dropdown-menu
+{
+
+	left:-35px !important;
+	top:-1px !important;
+	color: #025196 !important;
+	font-size: 16px !important;
+}
+
+.divNavLink:hover
+{
+
+	background-color:#02457f !important; ;
+
+}
+a:hover
+{
+	text-decoration: none !important;
+}
+
+.rightBar
+{
+	border-right: 1px #ffffff solid;
+	max-width: 12% !important;
+}
+.linkBottom
+{
+	border-bottom: #c8cbcf 1px solid;
+}
+.mainBody
+{
+    max-width: 700px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-top: 60px !important;
+}
+#mainPage h2
+{
+    color: #FDB338;
+	font-family:"Poppins-Regular";
+}
+.ccButton
+{
+    background-color:#FDB338 ;
+    color: #ffffff !important;
+}
+#txtContent
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.dropdown-menu li:hover
+{
+    background-color: #e3e7ed;
+}
+#uploadLink, #refreshTxt
+{
+	float: right;
+	color:#FDB338;
+    margin-right: 10px;
+}
+#avatar
+{
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	float: right;
+	margin-top: 5px;
+}
+#targetLanguage
+{
+	width: 100%;
+	text-align: left;
+}
+#targetLanguage.dropdown-toggle::after
+{
+	float: right;
+	margin-top: 10px;
+}
+.error
+{
+	color: red !important;
+}
+
+
+.titlePage
+{
+	color: #000 ;
+	font-family:poppins-regular;
+}
+
+.container
+{
+	margin: 25px;
+	display: flex;
+	justify-content: flex-end;
+	color: #000 ;
+	font-family:poppins-regular !important;
+}
+
+#body
+{
+	margin: 70px;
+}
+
+.element
+{
+	padding-right: 20px;
+	font-family:poppins-regular;
+	font-size: 15px;
+	line-height: 1.5;
+	color: #000;
+
+}
+
+#errorMsg
+{
+    display: none;
+    margin-top: 10px;
 }

@@ -1,53 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title</title>
-    <link rel="stylesheet" href="css/Styles.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/cc.ico">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
 </head>
 <body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic" >
+					<img src="images/logo.png" alt="IMG">
+				</div>
 
-<div class="container-fluid">
-    <div class="row" id="pageHeader">
+				<form class="login100-form validate-form">
+					<span class="login100-form-title">
+						Member Login
+					</span>
 
-        <div class="col-sm-1" ><img src="images/logo.png" class="logo"/></div>
-        <div class="col-sm-1" ><p class="pageTitle">CopyCat</p></div>
-        <div class="col-sm-1 navigation">
-            <div class="navLink">
-                <a class="fontStyle" href="#">Home</a>
-            </div>
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" id="txtEmail" type="text" name="email" placeholder="Email">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
 
-        </div>
-        <div class="col-sm-2 navigation rightBar">
-            <div class="navLink ">
-                <a class="fontStyle" href="#">Dashboard</a>
-            </div>
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" id="usrPassword" type="password" name="pass" placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
 
-        </div>
-        <div class="col-sm-1 offset-sm-6">
-            <div class="linkButton">
-            <ul class="nav navbar-nav navbar-right">
-                 <li class="dropdown">
-                    <a class="dropdown-toggle linkIcon" data-toggle="dropdown" href="#">
-                        <span  class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li style="border-bottom: #c8cbcf 1px solid"><a class="customLink" href="#">My Profile</a></li>
-                        <li><a class="customLink" href="#">Sign Out</a></li>
-                    </ul>
-                </li>
-            </ul>
-            </div>
-        </div>
+					<div class="text-center p-t-12">
+						
+						<a class="txt2" href="#">
+							Forgot Password?
+						</a>
+					</div>
 
-    </div>
-</div>
+					<div class="text-center p-t-136">
+						<a class="txt2" href="#">
+							Create your Account
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
 </body>
-<footer id="banner" class="container-fluid text-center">
-    <p>@Copyright</p>
-</footer>
 </html>
