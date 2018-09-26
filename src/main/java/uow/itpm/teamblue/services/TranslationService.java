@@ -14,14 +14,15 @@ public class TranslationService {
     @Autowired
     private TranslatorProperties translatorProperties;
 
-    public void detectLanguage(Translate translate){
-        translatorApi.getLanguage(translate);
+    public TranslatorResponse detectLanguage(Translate translate){
+        return translatorApi.getLanguage(translate);
     }
 
-    public void translate(Translate translate){
+    public TranslatorResponse translate(Translate translate){
         TranslatorResponse response = translatorApi.getTranslated(translate);
         System.out.println(response.getLang());
         System.out.println(response.getCode());
         System.out.println(response.getText());
+        return response;
     }
 }
