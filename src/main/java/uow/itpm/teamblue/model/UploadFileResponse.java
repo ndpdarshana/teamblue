@@ -5,6 +5,7 @@ public class UploadFileResponse {
     private String fileDownloadUri;
     private String fileType;
     private long size;
+    private Integer docId;
 
     public UploadFileResponse(String fileName, String fileDownloadUri, String fileType, long size){
         this.fileName = fileName;

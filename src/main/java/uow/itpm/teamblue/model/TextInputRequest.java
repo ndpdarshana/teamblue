@@ -8,6 +8,8 @@ public class TextInputRequest {
     private String text;
     @JsonProperty("lang")
     private List<String> languageList;
+    private boolean isFile;
+    private String fileName;
 
     public String getText() {
         return text;
@@ -23,5 +25,21 @@ public class TextInputRequest {
 
     public void setLanguageList(List<String> languageList) {
         this.languageList = languageList;
+    }
+
+    public boolean isFile() {
+        return isFile;
+    }
+
+    public void setFile(boolean file) {
+        isFile = file;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 }

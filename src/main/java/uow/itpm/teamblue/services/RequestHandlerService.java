@@ -33,7 +33,12 @@ public class RequestHandlerService {
 
     public SubmitResponse textInputHandler(TextInputRequest textInputRequest, User user){
         Document document = new Document();
-        document.setDocumentName("doc_" + user.getUsername());
+
+        if(textInputRequest.isFile()){
+            document.setDocumentName(textInputRequest.getFileName());
+        }else {
+            document.setDocumentName("doc_" + user.getUsername());
+        }
         document.setText(textInputRequest.getText());
         document.setUser(user);
         List<DocumentLanguage> documentLanguages = new ArrayList<>();

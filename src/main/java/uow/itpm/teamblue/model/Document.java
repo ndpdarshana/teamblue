@@ -27,8 +27,6 @@ public class Document {
     @ElementCollection
     private List<CopyLeaksMetadata> copyLeaksMetadataList;
 
-    private String languages;
-
     public Integer getId() {
         return id;
     }
@@ -71,14 +69,6 @@ public class Document {
 
     public void setCopyLeaksMetadataList(List<CopyLeaksMetadata> copyLeaksMetadataList) {
         this.copyLeaksMetadataList = copyLeaksMetadataList;
-    }
-
-    public String getLanguages() {
-        return languages;
-    }
-
-    public void setLanguages(String languages) {
-        this.languages = languages;
     }
 
     public List<DocumentLanguage> getLanguagesList() {
