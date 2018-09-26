@@ -19,7 +19,7 @@ public class UserController {
     public @ResponseBody String addNewUser(@RequestBody User user){
         if(user.getEmail() == null || user.getEmail().equals("") || user.getUsername() == null
                 || user.getUsername().equals("")){
-            return "{'error}";
+            return "{'status':'failed'}";
         }
         userService.createUser(user);
         if(user.getId() != null && user.getId()>0) {

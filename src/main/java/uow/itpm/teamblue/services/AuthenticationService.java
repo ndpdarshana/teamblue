@@ -1,6 +1,7 @@
 package uow.itpm.teamblue.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import uow.itpm.teamblue.model.AuthenticationTokenResponse;
 import uow.itpm.teamblue.model.User;
@@ -31,6 +32,9 @@ public class AuthenticationService {
         }else if(user.getEmail() != null){
             dbUser = userRepository.findByEmail(user.getEmail());
         }
-        return jwtTokenGenerator.generate(dbUser);
+        if(dbUser != null && dbUser.isAuthenticated(user)) {
+            return jwtTokenGenerator.generate(dbUser);
+        }
+        return new AuthenticationTokenResponse(HttpStatus.UNAUTHORIZED, null);
     }
 }
