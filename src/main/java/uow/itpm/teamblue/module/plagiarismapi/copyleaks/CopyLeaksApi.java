@@ -66,7 +66,7 @@ public class CopyLeaksApi implements PlagiarismCheckerApi {
         ResponseEntity<PlagiarismApiStatus> responseEntity = restTemplate.exchange(url, HttpMethod.GET, request, PlagiarismApiStatus.class);
         if(responseEntity.getStatusCode() == HttpStatus.UNAUTHORIZED){
             plagiarismApiUser = loginToApi();
-            status(plagiarismCheck);
+            plagiarismCheck = status(plagiarismCheck);
         }
         plagiarismCheck.setPlagiarismApiStatus(responseEntity.getBody());
         return plagiarismCheck;

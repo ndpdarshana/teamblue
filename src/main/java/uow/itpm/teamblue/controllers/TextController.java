@@ -1,10 +1,7 @@
 package uow.itpm.teamblue.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import uow.itpm.teamblue.model.SubmitResponse;
 import uow.itpm.teamblue.model.TextInputRequest;
 import uow.itpm.teamblue.model.User;
@@ -28,6 +25,13 @@ public class TextController {
         User user = (User) request.getSession().getAttribute("user");
         user = userRepository.findByUsername(user.getUsername());
         return requestHandlerService.textInputHandler(body, user);
+    }
+
+    @GetMapping("/text/{bookId}")
+    public SubmitResponse getResult(HttpServletRequest request, @PathVariable("bookId") Integer bookId){
+        User user = (User)request.getSession().getAttribute("user");
+        user = userRepository.findByUsername(user.getUsername());
+        return requestHandlerService.getResult(bookId, user);
     }
 
 }

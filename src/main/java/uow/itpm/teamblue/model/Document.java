@@ -20,9 +20,12 @@ public class Document {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "doc_id", columnDefinition = "integer")
     @ElementCollection
-//    private Set<DocumentLanguage> languagesList;
     private List<DocumentLanguage> languagesList;
-    private String copyLeaksId;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "doc_id", columnDefinition = "integer")
+    @ElementCollection
+    private List<CopyLeaksMetadata> copyLeaksMetadataList;
 
     private String languages;
 
@@ -60,12 +63,14 @@ public class Document {
         this.text = text;
     }
 
-    public String getCopyLeaksId() {
-        return copyLeaksId;
+    @OneToMany(mappedBy = "copyLeaksMetadata", cascade = CascadeType.ALL)
+    @JoinColumn(name = "doc_id", columnDefinition = "integer")
+    public List<CopyLeaksMetadata> getCopyLeaksMetadataList() {
+        return copyLeaksMetadataList;
     }
 
-    public void setCopyLeaksId(String copyLeaksId) {
-        this.copyLeaksId = copyLeaksId;
+    public void setCopyLeaksMetadataList(List<CopyLeaksMetadata> copyLeaksMetadataList) {
+        this.copyLeaksMetadataList = copyLeaksMetadataList;
     }
 
     public String getLanguages() {
@@ -85,14 +90,4 @@ public class Document {
     public void setLanguagesList(List<DocumentLanguage> languagesList) {
         this.languagesList = languagesList;
     }
-
-    //    @OneToMany(mappedBy = "documentLanguage", cascade = CascadeType.ALL)
-//    @JoinColumn(name = "doc_id", columnDefinition = "integer")
-//    public Set<DocumentLanguage> getLanguagesList() {
-//        return languagesList;
-//    }
-//
-//    public void setLanguagesList(Set<DocumentLanguage> languagesList) {
-//        this.languagesList = languagesList;
-//    }
 }
