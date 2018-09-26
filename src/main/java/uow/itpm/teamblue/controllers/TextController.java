@@ -9,6 +9,7 @@ import uow.itpm.teamblue.model.repo.UserRepository;
 import uow.itpm.teamblue.services.RequestHandlerService;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @RestController
 @RequestMapping("/rest")
@@ -22,16 +23,22 @@ public class TextController {
 
     @PostMapping("/text")
     public SubmitResponse textIn(HttpServletRequest request,  @RequestBody TextInputRequest body){
-        User user = (User) request.getSession().getAttribute("user");
-        user = userRepository.findByUsername(user.getUsername());
-        return requestHandlerService.textInputHandler(body, user);
+        return requestHandlerService.textInputHandler(body, getUser(request));
     }
 
     @GetMapping("/text/{bookId}")
     public SubmitResponse getResult(HttpServletRequest request, @PathVariable("bookId") Integer bookId){
+        return requestHandlerService.getResult(bookId, getUser(request));
+    }
+
+    @GetMapping("/documents/all")
+    public List<SubmitResponse> getAllDocuments(HttpServletRequest request){
+        return requestHandlerService.getAllDocuments(getUser(request));
+    }
+
+    private User getUser(HttpServletRequest request){
         User user = (User)request.getSession().getAttribute("user");
-        user = userRepository.findByUsername(user.getUsername());
-        return requestHandlerService.getResult(bookId, user);
+        return userRepository.findByUsername(user.getUsername());
     }
 
 }

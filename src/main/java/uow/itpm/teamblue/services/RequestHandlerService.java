@@ -94,6 +94,17 @@ public class RequestHandlerService {
         return submitResponse;
     }
 
+    public List<SubmitResponse> getAllDocuments(User user){
+        List<SubmitResponse> submitResponses = new ArrayList<>();
+        List<Document> documents = new ArrayList<>();
+        documents = documentRepository.findByUserId(user.getId());
+        for(Document document:documents){
+            SubmitResponse submitResponse = getResult(document.getId(), user);
+            submitResponses.add(submitResponse);
+        }
+        return submitResponses;
+    }
+
     private void detectLanguageRequestHandler(Document document, TranslatorListener translatorListener){
         logger.info("Detect language request handler");
         new Thread(() -> {
