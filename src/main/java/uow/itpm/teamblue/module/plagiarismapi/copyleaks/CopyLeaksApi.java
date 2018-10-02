@@ -85,10 +85,29 @@ public class CopyLeaksApi implements PlagiarismCheckerApi {
                 new ParameterizedTypeReference<List<PlagiarismApiResult>>(){});
         if(responseEntity.getStatusCode() == HttpStatus.UNAUTHORIZED){
             plagiarismApiUser = loginToApi();
-            status(plagiarismCheck);
+            plagiarismCheck = result(plagiarismCheck);
         }
 
         plagiarismCheck.setPlagiarismApiResultList(responseEntity.getBody());
+        return plagiarismCheck;
+    }
+
+    public PlagiarismCheck generateReadOnlyKey(PlagiarismCheck plagiarismCheck){
+        if(plagiarismApiUser==null){
+            plagiarismApiUser = loginToApi();
+        }
+
+        String url = plagiarismApiProperties.getUrl() + "/account/permissions/"+ plagiarismCheck.getProcessId() +"/readonly/";
+
+        HttpEntity<String> request = new HttpEntity<>(null, getHeader());
+        ResponseEntity<String> responseEntity = restTemplate.exchange(url, HttpMethod.POST, request,
+                new ParameterizedTypeReference<String>(){});
+        if(responseEntity.getStatusCode() == HttpStatus.UNAUTHORIZED){
+            plagiarismApiUser = loginToApi();
+            generateReadOnlyKey(plagiarismCheck);
+        }
+
+        plagiarismCheck.setKey(responseEntity.getBody());
         return plagiarismCheck;
     }
 

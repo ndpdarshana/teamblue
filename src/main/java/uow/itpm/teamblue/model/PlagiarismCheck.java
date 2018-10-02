@@ -11,6 +11,7 @@ public class PlagiarismCheck {
     private String processId;
     private PlagiarismApiStatus plagiarismApiStatus;
     private List<PlagiarismApiResult> plagiarismApiResultList;
+    private String key;
 
     public String getText() {
         return text;
@@ -50,5 +51,13 @@ public class PlagiarismCheck {
 
     public void setPlagiarismApiResultList(List<PlagiarismApiResult> plagiarismApiResultList) {
         this.plagiarismApiResultList = plagiarismApiResultList;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }
