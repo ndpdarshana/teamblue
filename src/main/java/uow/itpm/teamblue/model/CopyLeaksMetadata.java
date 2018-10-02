@@ -21,6 +21,10 @@ public class CopyLeaksMetadata {
 
     private String lang;
 
+    private String readOnlyKey;
+
+    private String resultUrl;
+
     public Integer getId() {
         return id;
     }
@@ -69,5 +73,17 @@ public class CopyLeaksMetadata {
 
     public void setLang(String lang) {
         this.lang = lang;
+    }
+
+    public String getReadOnlyKey() {
+        return readOnlyKey;
+    }
+
+    public void setReadOnlyKey(String readOnlyKey) {
+        this.readOnlyKey = readOnlyKey;
+    }
+
+    public String getResultUrl() {
+        return "https://copyleaks.com/compare-embed/education/"+getCopyLeaksId()+"/1?key="+getReadOnlyKey();
     }
 }
