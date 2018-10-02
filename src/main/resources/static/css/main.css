@@ -447,3 +447,7 @@ iframe {
     opacity: 1;
   }
 }
+#invalidLogin
+{
+  display:none;
+}

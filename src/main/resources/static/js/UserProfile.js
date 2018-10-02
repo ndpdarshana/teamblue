@@ -3,7 +3,7 @@ $(function(){
     $("#pageFooter").load("footer.html");
     GetUserDetails();
 });
-function GetUserDetails()
+/*function GetUserDetails()
 {
     var url = ;
     var headers =
@@ -23,12 +23,14 @@ function GetUserDetails()
         data: JSON.stringify(userData),
         success: function (data) {
 
+
+
         },
         error: function (error) {
             console.log(JSON.stringify(error));
         }
     });
-}
+}*/
 function ShowEditPane() {
     $('#userProfileDetails').css("display","none");
     $('#btnEdit').css("display","none");
@@ -38,7 +40,7 @@ function ShowEditPane() {
 }
 function UpdateProfile() {
     //Need to add code for validations
-    var url = ;
+    /*var url = ;
     var headers =
         {
             "accept": "application/json;odata=verbose",
@@ -64,5 +66,5 @@ function UpdateProfile() {
         error: function (error) {
             console.log(JSON.stringify(error));
         }
-    });
+    });*/
 }

@@ -1,30 +1,14 @@
-
+var input;
+var loginUrl = "http://localhost:8080/auth/token";
 (function ($) {
     "use strict";
 
     
     /*==================================================================
     [ Validate ]*/
-    var input = $('.validate-input .input100');
+    input = $('.validate-input .input100');
 
-    $('.validate-form').on('submit',function(){
-        var check = true;
-
-        for(var i=0; i<input.length; i++) {
-            if(validate(input[i]) == false){
-                showValidate(input[i]);
-                check=false;
-            }
-        }
-
-        if(check)
-        {
-            Login();
-        }
-        return check;
-    });
-
-
+})(jQuery);
     $('.validate-form .input100').each(function(){
         $(this).focus(function(){
            hideValidate(this);
@@ -55,36 +39,65 @@
 
         $(thisAlert).removeClass('alert-validate');
     }
-    function Login() {
 
-        var userName =$('#txtEmail').val().trim();
-        var password=$('#usrPassword').val().trim();
-        var url = "localhost:8080/auth/token";
-        var headers =
-            {
-                "accept": "application/json;odata=verbose",
-                "X-RequestDigest": $("#__REQUESTDIGEST").val(),
-                "content-Type": "application/json;odata=verbose"
-            };
-        var userData={
-            "username":userName ,
-            "email":userName ,
-            "password":password
-        };
-        $.ajax({
-            url: url,
-            type: "GET",
-            contentType: "application/json;odata=verbose",
-            headers: headers,
-            data: JSON.stringify(userData),
-            success: function (data) {
-                window.location.href="html/Home.html";
-            },
-            error: function (error) {
-                console.log(JSON.stringify(error));
-            }
-        });
+
+
+
+function OnSubmit()
+{
+    var check = true;
+
+    for(var i=0; i<input.length; i++) {
+        if(validate(input[i]) == false){
+            showValidate(input[i]);
+            check=false;
+        }
     }
-    
 
-})(jQuery);
+    if(check)
+    {
+        Login();
+        //window.location.href="html/Home.html";
+    }
+    else
+    {
+        return check;
+    }
+}
+function Login() {
+
+
+    var userName =$('#txtEmail').val().trim();
+    var password=$('#usrPassword').val().trim();
+    var headers =
+        {
+            "Content-Type": "application/json"
+        };
+    var userData={
+        "username":userName ,
+        "email":userName ,
+        "password":password
+    };
+    $.ajax({
+        url: loginUrl,
+        type: "POST",
+        contentType: "application/json;odata=verbose",
+        headers: headers,
+        data: JSON.stringify(userData),
+        success: function (data) {
+            if(data.status=="UNAUTHORIZED")
+            {
+                $("#invalidLogin").css("display","block");
+            }
+            else
+            {
+                var token=data.token;
+                window.location.href="html/Home.html?token="+token;
+            }
+        },
+        error: function (error) {
+            console.log(JSON.stringify(error));
+            $("#invalidLogin").css("display","block");
+        }
+    });
+}
