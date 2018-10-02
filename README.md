@@ -37,7 +37,7 @@ A cross-language plagiarism detection tool
 
 ```SQL 
 CREATE DATABASE teamblue;
-CREATE USER 'teamblue'@'localhost' IDENTIFIED BY 'test123;
+CREATE USER 'teamblue'@'localhost' IDENTIFIED BY 'test123';
 GRANT ALL PRIVILEGES ON teabblue.* TO 'teamblue'@'localhost';
 FLUSH PRIVILEGES;
 ```

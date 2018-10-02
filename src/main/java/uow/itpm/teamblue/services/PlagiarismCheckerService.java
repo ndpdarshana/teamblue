@@ -29,8 +29,12 @@ public class PlagiarismCheckerService {
         if(plagiarismCheck.getPlagiarismApiStatus() != null
                 && plagiarismCheck.getPlagiarismApiStatus().getProgressPercents() <  100){
             plagiarismCheck = checkStatus(plagiarismCheck);
-            result(plagiarismCheck);
+            plagiarismCheck = result(plagiarismCheck);
         }
         return plagiarismCheckerApi.result(plagiarismCheck);
+    }
+
+    public PlagiarismCheck getKey(PlagiarismCheck plagiarismCheck){
+        return plagiarismCheckerApi.generateReadOnlyKey(plagiarismCheck);
     }
 }

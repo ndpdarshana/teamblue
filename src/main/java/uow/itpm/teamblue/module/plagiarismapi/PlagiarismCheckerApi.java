@@ -8,4 +8,5 @@ public interface PlagiarismCheckerApi {
     public PlagiarismCheck checkByText(PlagiarismCheck plagiarismCheck);
     public PlagiarismCheck status(PlagiarismCheck plagiarismCheck);
     public PlagiarismCheck result(PlagiarismCheck plagiarismCheck);
+    public PlagiarismCheck generateReadOnlyKey(PlagiarismCheck plagiarismCheck);
 }
