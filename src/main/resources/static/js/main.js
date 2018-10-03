@@ -92,7 +92,7 @@ function Login() {
             else
             {
                 var token=data.token;
-                window.location.href="html/Home.html?token="+token;
+                window.location.href="html/home.html?token="+token;
             }
         },
         error: function (error) {
