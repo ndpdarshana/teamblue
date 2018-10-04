@@ -146,6 +146,7 @@ table thead tr {
   height: 60px;
   background: #FDB338;
 }
+
 table tbody tr {
   height: 50px;
 }
@@ -172,6 +173,8 @@ table td.r, table th.r {
   color: #000;
   line-height: 1.2;
   font-weight: unset;
+  height: 60px;
+  background: #FDB338;
 }
 
 tbody tr:nth-child(even) {
@@ -194,7 +197,6 @@ tbody tr:hover {
 
 .column1 {
   width: 25px;
-  padding-left: 40px;
   overflow: auto;
 }
 

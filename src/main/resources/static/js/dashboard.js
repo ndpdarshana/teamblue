@@ -33,25 +33,23 @@ function displayTable(data) {
         cell1.appendChild(document.createTextNode(text1));
 
         cell2 = tbl_row.insertCell(1);
-        // var text = data.docId;
         text2 = value['document'].documentName;
-        // create the link + display the text
         cell2.appendChild(document.createTextNode(text2));
 
         cell3 = tbl_row.insertCell(2);
         link1 = document.createElement('a');
-        // link1 = "test";
         link1.href = 'https://www.uow.edu.au/index.html' ;
         link1.textContent = 'english';
-        // create the link + display the text
+        // link1.href = value['plagiarismCheck'][0].url ;
+        // link1.textContent = value['plagiarismCheck'][0].lang;
         cell3.appendChild(link1);
 
         cell4 = tbl_row.insertCell(3);
         link2 = document.createElement('a');
-        // link2 = "test";
         link2.href = 'https://www.uow.edu.au/index.html' ;
         link2.textContent = 'english';
-        // create the link + display the text
+        // link1.href = value['plagiarismCheck'][1].url ;
+        // link1.textContent = value['plagiarismCheck'][1].lang;
         cell4.appendChild(link2);
     })
     $("#dashboardTable").html(tbl_head);
