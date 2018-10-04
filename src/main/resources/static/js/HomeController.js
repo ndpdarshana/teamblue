@@ -1,12 +1,13 @@
 var targetLanguage="";
 var usrToken;
+var navToken;
 $(function(){
     $("#pageHeader").load("header.html");
     $("#pageFooter").load("footer.html");
     $('[data-toggle="tooltip"]').tooltip();
     var pageUrl= window.location.href;
-    usrToken = pageUrl.split('=')[1];
-    usrToken= "Token "+usrToken;
+    navToken = pageUrl.split('=')[1];
+    usrToken= "Token "+navToken;
 
 
 });
@@ -24,25 +25,21 @@ function BrowseDoc()
 function RefreshTxt()
 {
     $('#txtContent').val("");
-    targetLanguage="";
 }
-function SetLanguage(lang) {
+function SetLanguage() {
 
     //$("#targetLanguage").html(language);
    // targetLanguage=language;
     $("#errorMsg").css("display","none");
-    targetLanguage=lang.substring(0, 1);
-    targetLanguage=targetLanguage.toLowerCase();
-    $("#targetLanguage").html(lang);
-
+    //var lang=$( "#languageSelect option:selected" ).text();
+    targetLanguage=$( "#languageSelect" ).val();
 }
 
 function CheckPlagiarism() {
 
     $('#errorMsg3').css("display","none");
-    if(targetLanguage=="")
+    if(targetLanguage==""||targetLanguage=="0")
     {
-
         $('#errorMsg').css("display","block");
     }
     else
@@ -71,7 +68,7 @@ function CheckPlagiarism() {
                 success: function (data) {
                     if(data.status=="accepted")
                     {
-                        window.location.href="dashboard.html?token="+usrToken;
+                        window.location.href="dashboard.html?token="+navToken;
                     }
                     else
                     {
@@ -86,7 +83,7 @@ function CheckPlagiarism() {
         }
         else if(selectedFile)
         {
-            UploadDoc();
+            UploadToServer();
         }
         else
         {
@@ -95,51 +92,24 @@ function CheckPlagiarism() {
 
     }
 }
-function UploadDoc()
-{
 
-    var selectedFile = document.getElementById('my_file').files[0];
-    var  fileName, reader, arrayBuffer;
-
-
-                fileName = selectedFile.name;
-                reader = new FileReader();
-                reader.onload = function ()
-                {
-                    arrayBuffer = reader.result;
-                    UploadToServer(fileName,arrayBuffer);
-
-                };
-                reader.readAsArrayBuffer(selectedFile);
-
-    var inputFiles = $("input[id='my_file']");
-    inputFiles.replaceWith(inputFiles.val('').clone(true));// for resetting the file upload
-}
-
-
-//Convert array buffer to binary
-function _arrayBufferToBase64(buffer) {
-    var binary = "";
-    var bytes = new Uint8Array(buffer)
-    var len = bytes.byteLength;
-    for (var i = 0; i < len; i++) {
-        binary += String.fromCharCode(bytes[i])
-    }
-    return binary;
-}
 //Upload Files to Server
-function UploadToServer(fileName, arrayBuffer) {
+function UploadToServer() {
     var restUrl =  "http://localhost:8080/rest/uploadFile";
-    var binaryData = _arrayBufferToBase64(arrayBuffer);
-    $.ajax({
+    var form = $('#fileUploadForm')[0];
+    var fileData = new FormData(form);
+     fileData.append('file', jQuery('#my_file')[0].files[0] );
+     fileData.append('language',targetLanguage);
+     var payload = {'file':jQuery('#my_file')[0].files[0],'language':targetLanguage};
+       $.ajax({
         url: restUrl,
         type: "POST",
         headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Authorization": usrToken
+           "Authorization": usrToken
         },
-        binaryStringRequestBody: true,
-        body: binaryData,
+        data: fileData,
+        processData: false, //prevent jQuery from automatically transforming the data into a query string
+        contentType: false,
         success: function (data) {
             if(data.status=="accepted")
             {
@@ -154,6 +124,9 @@ function UploadToServer(fileName, arrayBuffer) {
             console.log("Error in Uploading Files")
         }
     });
+    var inputFiles = $("input[id='my_file']");
+    inputFiles.replaceWith(inputFiles.val('').clone(true));// for resetting the file upload
+    $('#uploadedFiles').text("");
 }
 function DisplayDoc() {
 

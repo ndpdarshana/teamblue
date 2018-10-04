@@ -20,7 +20,7 @@
 </div>
 <div id="mainPage" class="mainBody">
     <h2>Cross Language Plagiarism Detection Tool</h2>
-
+<form id="fileUploadForm" enctype="multipart/form-data">
     <a data-toggle="tooltip" title="Reset Text" id="refreshTxt" href="#" onclick="RefreshTxt()">
         <span class="glyphicon glyphicon-refresh"></span></a>
     <a id="uploadLink" href="#" onclick="BrowseDoc()">
@@ -32,16 +32,22 @@
     <textarea placeholder="Copy paste the text here" class="form-control" rows="9" id="txtContent"></textarea>
     <div class="row">
         <div class="col-sm-5 offset-sm-4">    <div class="dropdown">
-            <button id="targetLanguage" class="btn btn-default dropdown-toggle ccButton" type="button" data-toggle="dropdown">Select Target Language
-                <span class="caret"></span></button>
-            <ul class="dropdown-menu">
+
+            <!--<ul class="dropdown-menu">
                 <li><a href="#" onclick="SetLanguage('English')" >English</a></li>
                 <li><a href="#" onclick="SetLanguage('French')" >French</a></li>
-                <li><a href="#" onclick="SetLanguage('Arabic')" >Arabic</a></li>
-             <!--   <li><a class="customLink" href="#" onclick="SetLanguage('English')">English</a></li>
-                <li><a class="customLink" href="#" onclick="SetLanguage('French')">French</a></li>
-                <li><a class="customLink" href="#" onclick="SetLanguage('Mandarin')">Mandarin</a></li>-->
-            </ul>
+                <li><a href="#" onclick="SetLanguage('Hindi')" >Hindi</a></li>
+                <!--   <li><a class="customLink" href="#" onclick="SetLanguage('English')">English</a></li>
+                   <li><a class="customLink" href="#" onclick="SetLanguage('French')">French</a></li>
+                   <li><a class="customLink" href="#" onclick="SetLanguage('Mandarin')">Mandarin</a></li>
+            </ul>-->
+            <select class="form-control" id="languageSelect" onchange="SetLanguage()">
+                <option value="0">Select target language</option>
+                <option value="en">English</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="la">Latin</option>
+            </select>
         </div>
         </div>
         <div class="col-sm-2">
@@ -56,8 +62,7 @@
             <div id="uploadSuccess" class="alert alert-success" role="alert">File uploaded successfully.</div>
         </div>
     </div>
-
-
+</form>
 </div>
 </body>
 <div id="pageFooter">

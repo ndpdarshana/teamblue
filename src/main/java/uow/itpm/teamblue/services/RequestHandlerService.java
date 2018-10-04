@@ -73,7 +73,7 @@ public class RequestHandlerService {
         SubmitResponse submitResponse = new SubmitResponse();
         submitResponse.setStatus("Result");
         submitResponse.setDocId(document.getId());
-//        submitResponse.setDocument(document);
+        submitResponse.setDocument(document);
         submitResponse.setPlagiarismCheck(plagiarismResultList);
         return submitResponse;
     }
