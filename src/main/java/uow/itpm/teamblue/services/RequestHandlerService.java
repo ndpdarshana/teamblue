@@ -55,7 +55,7 @@ public class RequestHandlerService {
 
         SubmitResponse submitResponse = new SubmitResponse();
         submitResponse.setDocId(document.getId());
-        submitResponse.setDocument(document);
+        submitResponse.setDocName(document.getDocumentName());
         submitResponse.setStatus("accepted");
         submitResponse.setMessage("Your document is being processed");
         return submitResponse;
@@ -73,7 +73,7 @@ public class RequestHandlerService {
         SubmitResponse submitResponse = new SubmitResponse();
         submitResponse.setStatus("Result");
         submitResponse.setDocId(document.getId());
-//        submitResponse.setDocument(document);
+        submitResponse.setDocName(document.getDocumentName());
         submitResponse.setPlagiarismCheck(plagiarismResultList);
         return submitResponse;
     }
