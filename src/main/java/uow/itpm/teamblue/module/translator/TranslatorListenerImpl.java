@@ -29,19 +29,6 @@ public class TranslatorListenerImpl implements TranslatorListener{
                 plagiarismCheckerService, copyLeaksMetadataRepository);
         submitPlagiarismCheckJob(translatorResponse.getText().get(0), translate.getToLanguage(), document,
                 plagiarismCheckerService, copyLeaksMetadataRepository);
-//        PlagiarismCheck plagiarismCheck = new PlagiarismCheck();
-//        plagiarismCheck.setText(translatorResponse.getText().get(0));
-//        plagiarismCheck.setLanguage(translate.getFromLanguage());
-//        plagiarismCheck = plagiarismCheckerService.checkText(plagiarismCheck);
-//
-//        CopyLeaksMetadata copyLeaksMetadata = new CopyLeaksMetadata();
-//        copyLeaksMetadata.setDocument(document);
-//        copyLeaksMetadata.setStatus("submitted");
-//        copyLeaksMetadata.setCopyLeaksId(plagiarismCheck.getProcessId());
-//        plagiarismCheck = plagiarismCheckerService.getKey(plagiarismCheck);
-//        copyLeaksMetadata.setReadOnlyKey(plagiarismCheck.getKey());
-//        copyLeaksMetadata.setLang(translate.getToLanguage());
-//        copyLeaksMetadataRepository.save(copyLeaksMetadata);
     }
 
     private void submitPlagiarismCheckJob(String text, String language, Document document,
