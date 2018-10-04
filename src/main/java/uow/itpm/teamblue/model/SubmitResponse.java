@@ -6,7 +6,7 @@ public class SubmitResponse {
     private Integer docId;
     private String status;
     private String message;
-    private Document document;
+    private String docName;
     private List<PlagiarismResult> plagiarismCheck;
 
     public Integer getDocId() {
@@ -33,12 +33,12 @@ public class SubmitResponse {
         this.message = message;
     }
 
-    public Document getDocument() {
-        return document;
+    public String getDocName() {
+        return docName;
     }
 
-    public void setDocument(Document document) {
-        this.document = document;
+    public void setDocName(String docName) {
+        this.docName = docName;
     }
 
     public List<PlagiarismResult> getPlagiarismCheck() {
