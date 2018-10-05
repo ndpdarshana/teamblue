@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import uow.itpm.teamblue.model.User;
 import uow.itpm.teamblue.model.repo.UserRepository;
+import uow.itpm.teamblue.module.security.JwtValidator;
 import uow.itpm.teamblue.services.UserService;
 
 @Controller
@@ -14,6 +15,9 @@ public class UserController {
     private UserRepository userRepository;
     @Autowired
     private UserService userService;
+    @Autowired
+    private JwtValidator jwtValidator;
+
 
     @PostMapping("/signup")
     public @ResponseBody String addNewUser(@RequestBody User user){
@@ -32,4 +36,12 @@ public class UserController {
     public @ResponseBody Iterable<User> getAllUsers(){
         return userRepository.findAll();
     }
+
+    @GetMapping("/{token}")
+    public @ResponseBody User getUser(@PathVariable("token") String token){
+        User user = jwtValidator.validate(token);
+        user = userRepository.findByUsername(user.getUsername());
+        return user;
+    }
+
 }
