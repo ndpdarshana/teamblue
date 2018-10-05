@@ -34,7 +34,8 @@ public class RequestHandlerService {
         if(textInputRequest.isFile()){
             document.setDocumentName(textInputRequest.getFileName());
         }else {
-            document.setDocumentName("doc_" + user.getUsername());
+            String str = textInputRequest.getText().substring(0, 5);
+            document.setDocumentName("doc_" + str);
         }
         document.setText(textInputRequest.getText());
         document.setUser(user);

@@ -38,18 +38,22 @@ function displayTable(data) {
 
         cell3 = tbl_row.insertCell(2);
         link1 = document.createElement('a');
-        link1.href = value.plagiarismCheck[0].url ;
-        link1.target = "_blank";
-        link1.textContent = value['plagiarismCheck'][0].lang;
+        if(value['plagiarismCheck'].length > 0 ) {
+            link1.href = value['plagiarismCheck'][0].url ;
+            link1.target = "_blank";
+            link1.textContent = value['plagiarismCheck'][0].lang;
+        }
         cell3.appendChild(link1);
 
         cell4 = tbl_row.insertCell(3);
         link2 = document.createElement('a');
-        link2.href = value.plagiarismCheck[1].url ;
-        link2.target = "_blank";
-        link2.textContent = value['plagiarismCheck'][1].lang;
+        if(value['plagiarismCheck'].length > 0) {
+            link2.href = value['plagiarismCheck'][1].url ;
+            link2.target = "_blank";
+            link2.textContent = value['plagiarismCheck'][1].lang;
+        }
         cell4.appendChild(link2);
-    })
+    });
     $("#dashboardTable").html(tbl_head);
     $("#dashboardTable").append(tbl_body);
 };

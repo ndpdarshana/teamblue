@@ -113,7 +113,7 @@ function UploadToServer() {
         success: function (data) {
             if(data.status=="accepted")
             {
-                window.location.href="dashboard.html?token="+usrToken;
+                window.location.href="dashboard.html?token="+navToken;
             }
             else
             {
