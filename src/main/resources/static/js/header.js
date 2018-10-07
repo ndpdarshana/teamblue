@@ -1,23 +1,27 @@
-function DocPage()
+function templatePage(namePage)
 {
     var usrToken;
     var pageUrl= window.location.href;
     usrToken = pageUrl.split('=')[1];
-    window.location.href="dashboard.html?token="+usrToken;
+    window.location.href=namePage+".html?token="+usrToken;
+}
+
+function DocPage()
+{
+    templatePage("dashboard");
 }
 
 function HomePage()
 {
-    var usrToken;
-    var pageUrl= window.location.href;
-    usrToken = pageUrl.split('=')[1];
-    window.location.href="home.html?token="+usrToken;
+    templatePage("home");
 }
 
 function userProfile()
 {
-    var usrToken;
-    var pageUrl= window.location.href;
-    usrToken = pageUrl.split('=')[1];
-    window.location.href="UserProfile.html?token="+usrToken;
+    templatePage("UserProfile");
+}
+
+function contactUs()
+{
+    templatePage("ContactUs");
 }
