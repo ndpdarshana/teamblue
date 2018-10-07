@@ -71,7 +71,7 @@ var input;
         //alert("In Submit");
         var firstName=$('#txtFirstName').val().trim();;
         var lastName=$('#txtLastName').val().trim();
-        var dob=$('#txtBday').val().trim();
+        // var dob=$('#txtBday').val().trim();
         var email=$('#txtEmail').val().trim();
         var password=$('#userPassword').val().trim();
         var headers =
@@ -83,8 +83,8 @@ var input;
             "email":email ,
             "password":password ,
             "firstName":firstName ,
-            "lastName":lastName ,
-            "dob":dob
+            "lastName":lastName
+            // "dob":dob
         };
         $.ajax({
             url: signUpURL,
