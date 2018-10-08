@@ -118,10 +118,12 @@ function UploadToServer() {
             else
             {
                 console.log("error");
+                $('#errorMsg2').css("display","block");
             }
            },
         error: function (ex) {
-            console.log("Error in Uploading Files")
+            console.log("Error in Uploading Files");
+            $('#errorMsg2').css("display","block");
         }
     });
     var inputFiles = $("input[id='my_file']");

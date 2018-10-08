@@ -23,7 +23,7 @@
 <form id="fileUploadForm" enctype="multipart/form-data">
     <a data-toggle="tooltip" title="Reset Text" id="refreshTxt" href="#" onclick="RefreshTxt()">
         <span class="glyphicon glyphicon-refresh"></span></a>
-    <a id="uploadLink" href="#" onclick="BrowseDoc()">
+    <a data-toggle="tooltip" title="Upload only text files!" id="uploadLink" href="#" onclick="BrowseDoc()">
         Upload Document<span class="glyphicon glyphicon-upload"></span>
     </a>
     <input id="my_file" style="display: none" type="file" onchange="DisplayDoc()" accept=".txt"/>
@@ -57,7 +57,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div id="errorMsg" class="alert alert-danger" role="alert">Please select a target language.</div>
-            <div id="errorMsg2" class="alert alert-danger" role="alert">Error in file upload.</div>
+            <div id="errorMsg2" class="alert alert-danger" role="alert">Error in file upload. Don't upload text files with same name.</div>
             <div id="errorMsg3" class="alert alert-danger" role="alert">Please enter a text or upload a file to check Plagiarism.</div>
             <div id="uploadSuccess" class="alert alert-success" role="alert">File uploaded successfully.</div>
         </div>
