@@ -99,3 +99,4 @@ To create pull requests, review and merge, use github web.
 - http://www.asjava.com/core-java/java-md5-example/
 - https://www.youtube.com/watch?v=-HYrUs1ZCLI
 - https://tech.yandex.com/translate/
+- https://copyleaks.com/
