@@ -1,3 +1,12 @@
+/*
+ * Copyright (c) 2018 TeamBlue - All rights Reserved.
+ *
+ * This file is a part of class project in CSCI814 - Teamblue, UOW.
+ *
+ * This code can not be copied of reuse until CSCI814 2018 Spring session grading release date of 29 November 2018.
+ * Written by Prabhath Darshana <pdnd723@uowmail.edu.au>
+ */
+
 package uow.itpm.teamblue.controllers;
 
 import org.slf4j.Logger;
@@ -9,9 +18,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import uow.itpm.teamblue.model.SubmitResponse;
-import uow.itpm.teamblue.model.UploadFileResponse;
 import uow.itpm.teamblue.model.User;
 import uow.itpm.teamblue.model.repo.UserRepository;
 import uow.itpm.teamblue.services.FileStorageService;
@@ -22,6 +29,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * FileController class contains the entry point of REST API /rest level requests.
+ * Authentication filter apply for this class. Therefore token must be comes with
+ * request header in oder to access these methods.
+ */
 @RestController
 @RequestMapping("/rest")
 public class FileController {
@@ -32,6 +44,15 @@ public class FileController {
     @Autowired
     private UserRepository userRepository;
 
+    /**
+     * This method is used to handle upload file requests.
+     * Request endpoint: /rest/uploadFile
+     * HTTP Method: Post
+     * @param request
+     * @param file
+     * @param language
+     * @return SubmitResponse object with status of success or failure.
+     */
     @PostMapping("/uploadFile")
     public SubmitResponse uploadFile(HttpServletRequest request, @RequestParam("file")MultipartFile file,
                                          @RequestParam("language")String language){
@@ -40,15 +61,19 @@ public class FileController {
 
         SubmitResponse submitResponse = fileStorageService.storeFile(file, user, language);
 
-        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/downloadFile/")
-                .path(submitResponse.getDocName())
-                .toUriString();
-
-//        return new UploadFileResponse(fileName, fileDownloadUri, file.getContentType(), file.getSize());
         return submitResponse;
     }
 
+    /**
+     * This method is used to handle upload multiple files requests.
+     * Request endpoint: /rest/uploadMultipleFiles
+     * HTTP Method: Post
+     * @param request
+     * @param files
+     * @param language
+     * @return List of SubmitResponses containing results for each file
+     * This method is not used in UI implementation
+     */
     @PostMapping("/uploadMultipleFiles")
     public List<SubmitResponse> uploadMultipleFiles(HttpServletRequest request,
                                                         @RequestParam("files") MultipartFile[] files,
@@ -59,6 +84,15 @@ public class FileController {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * This method is used to download files.
+     * Request endpoint: /rest/downloadFile/{fileName:.+}
+     * HTTP Method: Get
+     * @param fileName
+     * @param request
+     * @return Return the binary file
+     * This method is not used in UI implementation
+     */
     @GetMapping("/downloadFile/{fileName:.+}")
     public ResponseEntity<Resource> downloadFile(@PathVariable String fileName, HttpServletRequest request) {
         logger.debug("Get file " + fileName);

@@ -1,3 +1,12 @@
+/*
+ * Copyright (c) 2018 TeamBlue - All rights Reserved.
+ *
+ * This file is a part of class project in CSCI814 - Teamblue, UOW.
+ *
+ * This code can not be copied of reuse until CSCI814 2018 Spring session grading release date of 29 November 2018.
+ * Written by Prabhath Darshana <pdnd723@uowmail.edu.au>
+ */
+
 package uow.itpm.teamblue.model;
 
 import org.springframework.data.annotation.Transient;
@@ -10,11 +19,15 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * Database entity model for User table
+ * This class creates the database table User if not available and used to do all the transactions with database
+ */
 @Entity
 public class User {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+    private Integer id;//MySQL Auto generated Id field
     private String username;
     private String email;
     private String password;
@@ -102,6 +115,11 @@ public class User {
         this.enabled = enabled;
     }
 
+    /**
+     * Create MD5 hashing for password
+     * @param text
+     * @return
+     */
     private String getHashed(String text){
         try{
             MessageDigest messageDigest = MessageDigest.getInstance(algorithm);
@@ -117,6 +135,10 @@ public class User {
         }
     }
 
+    /**
+     * Return user json
+     * @return
+     */
     @Override
     public String toString(){
         return "{" +

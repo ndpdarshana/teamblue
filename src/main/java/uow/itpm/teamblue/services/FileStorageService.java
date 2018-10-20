@@ -1,3 +1,12 @@
+/*
+ * Copyright (c) 2018 TeamBlue - All rights Reserved.
+ *
+ * This file is a part of class project in CSCI814 - Teamblue, UOW.
+ *
+ * This code can not be copied of reuse until CSCI814 2018 Spring session grading release date of 29 November 2018.
+ * Written by Prabhath Darshana <pdnd723@uowmail.edu.au>
+ */
+
 package uow.itpm.teamblue.services;
 
 import org.apache.commons.io.IOUtils;
@@ -9,7 +18,10 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 import uow.itpm.teamblue.exceptions.FileNotFoundException;
 import uow.itpm.teamblue.exceptions.FileStorageException;
-import uow.itpm.teamblue.model.*;
+import uow.itpm.teamblue.model.FileStorageProperties;
+import uow.itpm.teamblue.model.SubmitResponse;
+import uow.itpm.teamblue.model.TextInputRequest;
+import uow.itpm.teamblue.model.User;
 import uow.itpm.teamblue.model.repo.DocumentRepository;
 
 import java.io.IOException;
@@ -22,6 +34,9 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * FileStorageService class handle the file input requests
+ */
 @Service
 public class FileStorageService {
     private final Path fileStorageLocation;
@@ -42,6 +57,13 @@ public class FileStorageService {
         }
     }
 
+    /**
+     * This method save the file in to upload folder and read the text in the file and submit for plagiarism check
+     * @param file
+     * @param user
+     * @param language
+     * @return SubmitResponse
+     */
     public SubmitResponse storeFile(MultipartFile file, User user, String language){
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
 
@@ -72,6 +94,11 @@ public class FileStorageService {
         }
     }
 
+    /**
+     * This method read the stored files
+     * @param fileName
+     * @return
+     */
     public Resource loadFileAsResource(String fileName){
         try{
             Path filePath = this.fileStorageLocation.resolve(fileName).normalize();

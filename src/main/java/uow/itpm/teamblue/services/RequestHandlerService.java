@@ -1,3 +1,12 @@
+/*
+ * Copyright (c) 2018 TeamBlue - All rights Reserved.
+ *
+ * This file is a part of class project in CSCI814 - Teamblue, UOW.
+ *
+ * This code can not be copied of reuse until CSCI814 2018 Spring session grading release date of 29 November 2018.
+ * Written by Prabhath Darshana <pdnd723@uowmail.edu.au>
+ */
+
 package uow.itpm.teamblue.services;
 
 import org.slf4j.Logger;
@@ -13,6 +22,9 @@ import uow.itpm.teamblue.module.translator.TranslatorListenerImpl;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * RequestHandlerService will handle all the requests from UI to submit text jobs
+ */
 @Service
 public class RequestHandlerService {
 
@@ -27,7 +39,12 @@ public class RequestHandlerService {
 
     private static final Logger logger = LoggerFactory.getLogger(RequestHandlerService.class);
 
-
+    /**
+     * This method will handle the text input requests and save requests to the database.
+     * @param textInputRequest
+     * @param user
+     * @return
+     */
     public SubmitResponse textInputHandler(TextInputRequest textInputRequest, User user){
         Document document = new Document();
 
@@ -62,6 +79,12 @@ public class RequestHandlerService {
         return submitResponse;
     }
 
+    /**
+     * This method will retrieve the result from api and set it to submit response object
+     * @param bookId
+     * @param user
+     * @return
+     */
     public SubmitResponse getResult(Integer bookId, User user){
         Document document = documentRepository.findById(bookId).get();
         List<PlagiarismResult> plagiarismResultList = new ArrayList<>();
@@ -79,6 +102,11 @@ public class RequestHandlerService {
         return submitResponse;
     }
 
+    /**
+     * This method get all the documents from the database for given user
+     * @param user
+     * @return
+     */
     public List<SubmitResponse> getAllDocuments(User user){
         List<SubmitResponse> submitResponses = new ArrayList<>();
         List<Document> documents = new ArrayList<>();
@@ -90,6 +118,13 @@ public class RequestHandlerService {
         return submitResponses;
     }
 
+    /**
+     * This method iniitiate the Thread to process the input text job.
+     * 1st it'll call to detect the language of original text, then the response will submit to TranslatorListener
+     * for further process.
+     * @param document
+     * @param translatorListener
+     */
     private void detectLanguageRequestHandler(Document document, TranslatorListener translatorListener){
         logger.info("Detect language request handler");
         new Thread(() -> {

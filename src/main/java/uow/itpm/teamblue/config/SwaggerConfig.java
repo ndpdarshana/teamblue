@@ -1,3 +1,12 @@
+/*
+ * Copyright (c) 2018 TeamBlue - All rights Reserved.
+ *
+ * This file is a part of class project in CSCI814 - Teamblue, UOW.
+ *
+ * This code can not be copied of reuse until CSCI814 2018 Spring session grading release date of 29 November 2018.
+ * Written by Prabhath Darshana <pdnd723@uowmail.edu.au>
+ */
+
 package uow.itpm.teamblue.config;
 
 import org.springframework.context.annotation.Bean;
@@ -15,6 +24,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import java.util.Arrays;
 import java.util.Collections;
 
+/**
+ * SwaggerConfiguration (Optional)
+ * Swagger documentation is REST Endpoint document generate automatically using REST annotations.
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
