@@ -1,6 +1,8 @@
 var targetLanguage="";
 var usrToken;
 var navToken;
+
+//Page load
 $(function(){
     $("#pageHeader").load("header.html");
     $("#pageFooter").load("footer.html");
@@ -12,6 +14,7 @@ $(function(){
 
 });
 
+//Click of upload link 
 function BrowseDoc()
 {
     $('#errorMsg2').css("display","none");
@@ -21,27 +24,29 @@ function BrowseDoc()
 
 }
 
-
+//Refresh the text editor content 
 function RefreshTxt()
 {
     $('#txtContent').val("");
 }
-function SetLanguage() {
 
-    //$("#targetLanguage").html(language);
-   // targetLanguage=language;
+//Set the selected target language
+function SetLanguage() {
+  
     $("#errorMsg").css("display","none");
-    //var lang=$( "#languageSelect option:selected" ).text();
     targetLanguage=$( "#languageSelect" ).val();
 }
 
+//Click function for CheckPlagiarism button
 function CheckPlagiarism() {
 
     $('#errorMsg3').css("display","none");
+	
     if(targetLanguage==""||targetLanguage=="0")
     {
         $('#errorMsg').css("display","block");
     }
+	
     else
     {
         var txtVal =$('#txtContent').val().trim();
@@ -68,6 +73,7 @@ function CheckPlagiarism() {
                 success: function (data) {
                     if(data.status=="accepted")
                     {
+						//Navigate to dashboard on successfull submission of request
                         window.location.href="dashboard.html?token="+navToken;
                     }
                     else
@@ -81,10 +87,12 @@ function CheckPlagiarism() {
                 }
             });
         }
+		
         else if(selectedFile)
         {
             UploadToServer();
         }
+		
         else
         {
             $('#errorMsg3').css("display","block");
@@ -130,6 +138,8 @@ function UploadToServer() {
     inputFiles.replaceWith(inputFiles.val('').clone(true));// for resetting the file upload
     $('#uploadedFiles').text("");
 }
+
+//Display the uploaded document
 function DisplayDoc() {
 
     var selectedFile = document.getElementById('my_file').files[0];
