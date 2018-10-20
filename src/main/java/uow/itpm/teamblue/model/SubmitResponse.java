@@ -1,7 +1,21 @@
+/*
+ * Copyright (c) 2018 TeamBlue - All rights Reserved.
+ *
+ * This file is a part of class project in CSCI814 - Teamblue, UOW.
+ *
+ * This code can not be copied of reuse until CSCI814 2018 Spring session grading release date of 29 November 2018.
+ * Written by Prabhath Darshana <pdnd723@uowmail.edu.au>
+ */
+
 package uow.itpm.teamblue.model;
 
 import java.util.List;
 
+/**
+ * SubmitResponse has many use over the application.
+ * This holds the document details and copyleaks results.
+ * This will convert into json object and return to the UI
+ */
 public class SubmitResponse {
     private Integer docId;
     private String status;

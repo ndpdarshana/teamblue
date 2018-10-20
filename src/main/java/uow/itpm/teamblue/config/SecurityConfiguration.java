@@ -1,3 +1,12 @@
+/*
+ * Copyright (c) 2018 TeamBlue - All rights Reserved.
+ *
+ * This file is a part of class project in CSCI814 - Teamblue, UOW.
+ *
+ * This code can not be copied of reuse until CSCI814 2018 Spring session grading release date of 29 November 2018.
+ * Written by Prabhath Darshana <pdnd723@uowmail.edu.au>
+ */
+
 package uow.itpm.teamblue.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +28,9 @@ import uow.itpm.teamblue.module.security.JwtSuccessHandler;
 
 import java.util.Collections;
 
+/**
+ * SecurityConfiguration class contains the configurations belongs to JWT authentication service.
+ */
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableWebSecurity
 @Configuration
@@ -28,7 +40,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     private JwtAuthenticationProvider authenticationProvider;
     @Autowired
     private JwtAuthenticationEntryPoint entryPoint;
-//    @Autowired
+
     private JwtAuthenticationTokenFilter filter = new JwtAuthenticationTokenFilter();
 
     @Bean
@@ -49,6 +61,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         super.configure(web);
     }
 
+    /**
+     * This method controls the configuration chain for JWT.
+     * Crossplatform configurations
+     * Endpoint filter configurations
+     * Roles etc.
+     * @param http
+     * @throws Exception
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()

@@ -1,3 +1,12 @@
+/*
+ * Copyright (c) 2018 TeamBlue - All rights Reserved.
+ *
+ * This file is a part of class project in CSCI814 - Teamblue, UOW.
+ *
+ * This code can not be copied of reuse until CSCI814 2018 Spring session grading release date of 29 November 2018.
+ * Written by Prabhath Darshana <pdnd723@uowmail.edu.au>
+ */
+
 package uow.itpm.teamblue.module.translator;
 
 import org.slf4j.Logger;
@@ -7,10 +16,26 @@ import uow.itpm.teamblue.model.repo.CopyLeaksMetadataRepository;
 import uow.itpm.teamblue.services.PlagiarismCheckerService;
 import uow.itpm.teamblue.services.TranslationService;
 
+/**
+ * TranslatorListenerImpl class is will execute when got the result from translation api.
+ */
 public class TranslatorListenerImpl implements TranslatorListener{
 
     private static final Logger logger = LoggerFactory.getLogger(TranslatorListenerImpl.class);
 
+    /**
+     * detectLanguageResponseHandler method will call when result got from the translator api for detect the language in original text.
+     * Then submit the both requests for copyleaks
+     * 1. Original text plagiarism check request
+     * 2. Selected second language translation submission
+     * 3. Submit the translated text to plagiarism check
+     * @param translatorResponse
+     * @param document
+     * @param translate
+     * @param translationService
+     * @param plagiarismCheckerService
+     * @param copyLeaksMetadataRepository
+     */
     @Override
     public void detectLanguageResponseHandler(TranslatorResponse translatorResponse, Document document,
                                               Translate translate,
@@ -31,6 +56,14 @@ public class TranslatorListenerImpl implements TranslatorListener{
                 plagiarismCheckerService, copyLeaksMetadataRepository);
     }
 
+    /**
+     * This method submit the copyleaks requests and save the data into database
+     * @param text
+     * @param language
+     * @param document
+     * @param plagiarismCheckerService
+     * @param copyLeaksMetadataRepository
+     */
     private void submitPlagiarismCheckJob(String text, String language, Document document,
                                           PlagiarismCheckerService plagiarismCheckerService,
                                           CopyLeaksMetadataRepository copyLeaksMetadataRepository){
