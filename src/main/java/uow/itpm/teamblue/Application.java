@@ -3,7 +3,7 @@
  *
  * This file is a part of class project in CSCI814 - Teamblue, UOW.
  *
- * This code can not be copied of reuse until CSCI814 2018 Spring session grading release date of 29 November 2018.
+ * This code can not be copied or reuse until CSCI814 2018 Spring session grading release date of 29 November 2018.
  * Written by Prabhath Darshana <pdnd723@uowmail.edu.au>
  */
 
@@ -40,7 +40,7 @@ public class Application {
     /**
      * Main method of the program. This require no parameters. When program executes, it'll automatically
      * launched the spring boot container
-     * @param args
+     * @param argsmodif
      */
     public static void main(String[] args){
         SpringApplication.run(Application.class, args);
